@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  db:
+    container_name: DB-SERVER
+    image: 'mongo'
+    ports:
+      - '27017:27017'
+  web:
+    container_name: BACKEND-SERVER
+    build: .
+    command: npm start
+    depends_on:
+      - db
+    ports:
+      - '9000:9000'
+    volumes:
+      - ./:/squads
