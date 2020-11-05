@@ -1,5 +1,5 @@
 .eslintrc.js
-.prettierrc.js
+.prettierrc
 .editorconfig
 node_modules
 node_modules/

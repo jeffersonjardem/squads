@@ -82,7 +82,7 @@ $ docker-compose up
 ````
 
 ### Testes com Postman
- - Importe o arquivo [postman requests](https://docs.docker.com/compose/install/) para o postman
+ - Importe o arquivo [postman requests](https://github.com/jeffersonjardem/squads/blob/main/squads.postman.json) para o postman
  - Execute as requests
 
 
