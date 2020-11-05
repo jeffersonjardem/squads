@@ -16,11 +16,12 @@ Projeto desenvolvido com Node.js e MongoDB
 
 ### Features
 
-  
+
+-  [x] Criação de Usuários
+
+-  [x] Autenticação JWT
 
 -  [x] CRUD de Produtos
-
-  
 
 -  [x] Conexão com o Banco de Dados MongoDB
 
@@ -84,6 +85,13 @@ $ docker-compose up
 ### Testes com Postman
  - Importe o arquivo [squads.postman.json](https://github.com/jeffersonjardem/squads/blob/main/squads.postman.json) para o postman
  - Execute as requests(localhost:9000)
+   - /users  - Crie uma conta informando name, email, password
+   - /login   - Autentique-se para realizar as demais requests (email, password)
+   - /products - Os produtos só poderão ser listados mediante autorização os campos de products são name, description, value.
+     - **POST** /product/
+	 - **GET** /product/id
+	 - **PUT** /product/id
+	 - **DELETE** /product/id
 
 
   
