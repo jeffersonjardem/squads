@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "bc1099a7-bfe9-4aea-bb19-a6c5d6fcd7a2",
+		"_postman_id": "fd6d36f7-9f08-44f9-ad2a-f02b5d537ec6",
 		"name": "squads",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -9,34 +9,18 @@
 			"name": "products",
 			"item": [
 				{
-					"name": "http://127.0.0.1:9000/products",
+					"name": "http://127.0.0.1:9000/products/",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE0Mjk1NzRlYTk2YzFjM2IzNTBlMGUiLCJpYXQiOjE2MDQ1OTYzNzksImV4cCI6MTYwNDc2OTE3OX0.yJlQkCPQcZsrGKhDIbv4FTjJ0WbbFaq0KI5KNlnDDZQ",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://127.0.0.1:9000/products",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "9000",
-							"path": [
-								"products"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "http://127.0.0.1:9000/products/5fa40661f3de9c0020a97eeb",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:9000/products/5fa40661f3de9c0020a97eeb",
+							"raw": "http://127.0.0.1:9000/products/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -47,20 +31,160 @@
 							"port": "9000",
 							"path": [
 								"products",
-								"5fa40661f3de9c0020a97eeb"
+								""
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "http://127.0.0.1:9000/products Copy",
+					"name": "http://127.0.0.1:9000/products/5fa316a839aa7273e4e412e9",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:9000/products/5fa314f4fb139a714fc3d99a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9000",
+							"path": [
+								"products",
+								"5fa314f4fb139a714fc3d99a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:9000/products/",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE0Mjk1NzRlYTk2YzFjM2IzNTBlMGUiLCJpYXQiOjE2MDQ1OTYzNzksImV4cCI6MTYwNDc2OTE3OX0.yJlQkCPQcZsrGKhDIbv4FTjJ0WbbFaq0KI5KNlnDDZQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:9000/products/5fa3633402c76570660bfdc0",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9000",
+							"path": [
+								"products",
+								"5fa3633402c76570660bfdc0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:9000/products/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE0Mjk1NzRlYTk2YzFjM2IzNTBlMGUiLCJpYXQiOjE2MDQ1OTYzNzksImV4cCI6MTYwNDc2OTE3OX0.yJlQkCPQcZsrGKhDIbv4FTjJ0WbbFaq0KI5KNlnDDZQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"prod 2\",\n    \"description\": \"produto 2 empresa 2\",\n    \"value\": 123.45\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:9000/products/?",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9000",
+							"path": [
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:9000/products/",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE0Mjk1NzRlYTk2YzFjM2IzNTBlMGUiLCJpYXQiOjE2MDQ1OTYzNzksImV4cCI6MTYwNDc2OTE3OX0.yJlQkCPQcZsrGKhDIbv4FTjJ0WbbFaq0KI5KNlnDDZQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"prod 3\",\n    \"description\": \"produto 2 empresa 2\",\n    \"value\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:9000/products/5fa3633402c76570660bfdc0",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "9000",
+							"path": [
+								"products",
+								"5fa3633402c76570660bfdc0"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "http://127.0.0.1:9000/users/",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"produto 2\",\n    \"description\": \"produto 2\",\n    \"value\": 5\n}",
+							"raw": "{\n    \"name\":\"Jefferson Souza\",\n    \"email\": \"jeffersonSouza@gmail.com\",\n    \"password\": 789789\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -68,7 +192,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:9000/products",
+							"raw": "http://127.0.0.1:9000/users/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -78,19 +202,38 @@
 							],
 							"port": "9000",
 							"path": [
-								"products"
+								"users",
+								""
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "http://127.0.0.1:9000/products/5fa40661f3de9c0020a97eeb",
+					"name": "http://127.0.0.1:9000/users/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "DELETE",
-						"header": [],
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE0Mjk1NzRlYTk2YzFjM2IzNTBlMGUiLCJpYXQiOjE2MDQ1OTgxODUsImV4cCI6MTYwNDc3MDk4NX0.QH3Ep_967Shkm341c2S3iUfgeIqFNVb2pxvxS5k1QsM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://127.0.0.1:9000/products/5fa40661f3de9c0020a97eeb",
+							"raw": "http://127.0.0.1:9000/users/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -100,21 +243,27 @@
 							],
 							"port": "9000",
 							"path": [
-								"products",
-								"5fa40661f3de9c0020a97eeb"
+								"users",
+								""
 							]
 						}
 					},
 					"response": []
-				},
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
 				{
-					"name": "http://127.0.0.1:9000/products/5fa40661f3de9c0020a97eeb",
+					"name": "http://127.0.0.1:9000/login/",
 					"request": {
-						"method": "PUT",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"produto 3\",\n    \"description\": \"produto 1\",\n    \"value\": 100.78   \n}",
+							"raw": "{\n    \"email\":\"jeffersonjardem@gmail.com\",\n    \"password\": \"123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -122,7 +271,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:9000/products/5fa40661f3de9c0020a97eeb",
+							"raw": "http://127.0.0.1:9000/login/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -132,8 +281,8 @@
 							],
 							"port": "9000",
 							"path": [
-								"products",
-								"5fa40661f3de9c0020a97eeb"
+								"login",
+								""
 							]
 						}
 					},
