@@ -8,7 +8,7 @@
   
   
 
-Projeto desenvolvido com Nodejs e MongoDB
+Projeto desenvolvido com Node.js e MongoDB
 
   
 
@@ -74,7 +74,7 @@ $ npm install
 # Construir os containers
 $ docker-compose build
 
-# Inicie a aplicação com o docker compose
+# Inicie a aplicação com o docker compose, rodando na porta 9000
 $ docker-compose up
 
   
@@ -83,7 +83,7 @@ $ docker-compose up
 
 ### Testes com Postman
  - Importe o arquivo [squads.postman.json](https://github.com/jeffersonjardem/squads/blob/main/squads.postman.json) para o postman
- - Execute as requests
+ - Execute as requests(localhost:9000)
 
 
   
