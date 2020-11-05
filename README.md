@@ -3,7 +3,7 @@
 
   
 
-<h1>SQUADS - Backend Developer I ou II</h1>
+<h1>SQUADS - Backend Developer II</h1>
 
   
   
