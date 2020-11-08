@@ -83,7 +83,14 @@ $ docker-compose up
 ````
 
 ### Testes com Jest
- - npm run test
+
+
+````bash
+# Execute os teste com jes
+$ npm run test
+
+
+````
 
 
 ### Testes com Postman
