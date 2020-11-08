@@ -5,6 +5,13 @@ import app from '../index';
 let token;
 
 beforeAll(async (done) => {
+  const user = {
+    name: 'Jefferson Jardem',
+    email: 'jeffersonjardem@gmail.com',
+    password: '123456'
+  };
+  const resAddUser = await request(app).post('/users').send(user);
+
   const res = await request(app).post('/login').send({
     email: 'jeffersonjardem@gmail.com',
     password: '123456'

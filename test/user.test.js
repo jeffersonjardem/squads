@@ -4,28 +4,6 @@ import app from '../index';
 
 let token;
 
-beforeAll(async (done) => {
-  const res = await request(app).post('/login').send({
-    email: 'jeffersonjardem@gmail.com',
-    password: '123456'
-  });
-  if (res.body.token) {
-    token = res.body.token;
-  } else {
-    token = null;
-  }
-  done();
-});
-
-describe('GET /users', () => {
-  test('Deve ser possível listar todos os usuários', async () => {
-    const res = await request(app)
-      .get('/users')
-      .set('Authorization', `Bearer ${token}`);
-    expect(res.statusCode).toBe(200);
-  });
-});
-
 describe('POST /users', () => {
   let user;
   beforeEach(async () => {
@@ -75,5 +53,26 @@ describe('POST /users', () => {
     const res = await request(app).post('/users').send(user);
 
     expect(!res.body.password).toBe(true);
+  });
+});
+
+describe('GET /users', () => {
+  test('Deve ser possível listar todos os usuários', async () => {
+    const resAddUser = await request(app).post('/users').send({
+      name: 'Jefferson Jardem',
+      email: 'jeffersonjardem@gmail.com',
+      password: '123456'
+    });
+
+    const resGetToken = await request(app).post('/login').send({
+      email: 'jeffersonjardem@gmail.com',
+      password: '123456'
+    });
+    const { token } = resGetToken.body;
+
+    const res = await request(app)
+      .get('/users')
+      .set('Authorization', `Bearer ${token}`);
+    expect(res.statusCode).toBe(200);
   });
 });
