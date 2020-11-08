@@ -86,7 +86,7 @@ $ docker-compose up
 
 
 ````bash
-# Execute os teste com jes
+# Execute os teste com jest
 $ npm run test
 
 
