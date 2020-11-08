@@ -18,18 +18,13 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.set('timestamps', true);
 
-UserSchema.pre('save', function (next) {
-  const user = this;
-  bcrypt.hash(user.password, 10, function (err, hash) {
-    if (err) {
-      return next(err);
-    }
-    user.password = hash;
-    next();
-  });
+UserSchema.pre('save', function cb(next) {
+  const salt = bcrypt.genSaltSync();
+  this.password = bcrypt.hashSync(this.password, salt);
+  next();
 });
 
-UserSchema.methods.checkPassword = async function checkPassword(password) {
+UserSchema.methods.checkPassword = function checkPassword(password) {
   return bcrypt.compare(password, this.password);
 };
 

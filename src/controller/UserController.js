@@ -3,7 +3,12 @@ import User from '../model/User';
 
 export default {
   async get(req, res) {
-    const users = await User.find({}, { password: 0 });
+    const { page = 1 } = req.query;
+    const users = await User.find(
+      {},
+      { password: 0 },
+      { skip: (page - 1) * 10, limit: 10 }
+    );
     return res.status(200).json(users);
   },
 
@@ -15,15 +20,13 @@ export default {
     });
 
     if (!(await userForm.isValid(req.body))) {
-      return res.status(400).json({ error: 'falha na validação dos campos' });
+      return res.status(400).json({ error: 'Falha na validação dos campos' });
     }
 
     const userExists = await User.findOne({ email: req.body.email });
     if (userExists) {
-      res.status(400).json({ error: 'Usuário já existe' });
+      return res.status(400).json({ error: 'Usuário já existe' });
     }
-
-    // const { name, email, password } = req.body;
 
     const { id, name, email } = await User.create(req.body);
 

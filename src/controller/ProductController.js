@@ -3,7 +3,10 @@ import Product from '../model/Product';
 
 export default {
   async get(req, res) {
-    const product = await Product.find();
+    const { page = 1 } = req.query;
+    const product = await Product.find()
+      .limit(10)
+      .skip((page - 1) * 10);
     return res.status(200).json(product);
   },
 
@@ -25,7 +28,7 @@ export default {
       });
 
       if (!(await productForm.isValid(req.body))) {
-        return res.status(401).json({ error: 'falha na validação dos campos' });
+        return res.status(400).json({ error: 'Falha na validação dos campos' });
       }
 
       const { name, description, value } = req.body;
@@ -50,7 +53,7 @@ export default {
       });
 
       if (!(await productForm.isValid(req.body))) {
-        return res.status(401).json({ error: 'falha na validação dos campos' });
+        return res.status(400).json({ error: 'Falha na validação dos campos' });
       }
 
       const { name, description, value } = req.body;
@@ -65,7 +68,10 @@ export default {
         { new: true }
       );
 
-      return res.status(200).json(product);
+      if (product) {
+        return res.status(200).json(product);
+      }
+      return res.status(400).json({ error: 'Produto não encontrado' });
     } catch (error) {
       return res.status(500).json({ error: 'Erro ao atualizar produto' });
     }
@@ -73,9 +79,12 @@ export default {
 
   async delete(req, res) {
     try {
-      await Product.findByIdAndRemove(req.params.id);
+      const produto = await Product.findByIdAndRemove(req.params.id);
 
-      return res.status(204).json();
+      if (produto) {
+        return res.status(204).json();
+      }
+      return res.status(400).json({ error: 'Produto não identificado' });
     } catch (error) {
       return res.status(500).json({ error: 'Erro ao deletar produto' });
     }

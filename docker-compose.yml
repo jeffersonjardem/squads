@@ -13,5 +13,7 @@ services:
       - db
     ports:
       - '9000:9000'
+    environment:
+     - MONGO_URL=mongodb://db:27017/squads
     volumes:
       - ./:/squads

@@ -17,10 +17,12 @@ export default {
     const user = await User.findOne({ email });
 
     if (!user) {
-      res.status(400).json({ error: 'Usuário não encontrado' });
+      return res.status(400).json({ error: 'Usuário não encontrado' });
     }
 
-    if (!(await user.checkPassword(password))) {
+    const passwordCheck = await user.checkPassword(password);
+
+    if (!passwordCheck) {
       return res.status(400).json({ error: 'Senha incorreta' });
     }
 
